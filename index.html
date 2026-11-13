@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday Munaza 🎂💗</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Caveat:wght@600;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="fall" aria-hidden="true"></div>
+
+<audio id="bgm" src="song.mp3" loop preload="none"></audio>
+<button id="musicBtn" class="music" aria-label="Music">🎵</button>
+
+<section id="gate">
+  <div class="gate-box">
+    <p class="small">A little surprise for you 🤍</p>
+    <button id="openBtn" class="envelope" aria-label="Open surprise">
+      <span class="flap"></span><span class="heart">💌</span>
+    </button>
+    <h2>Munaza, tap to open 🥹</h2>
+  </div>
+</section>
+
+<main id="site" class="hidden">
+
+  <header class="hero">
+    <p class="script">Happy Birthday</p>
+    <h1>Munaza</h1>
+    <p class="sub">to my best friend of 7 beautiful years 🎂💗</p>
+    <div class="hero-photo"><img src="images/photo1.jpg" alt="Birthday girl"></div>
+    <p class="scroll">scroll down, there's a lot of love waiting 🌷</p>
+  </header>
+
+  <section class="block" id="countdownBlock">
+    <h2 id="cdTitle">Countdown to your special day 🎀</h2>
+    <p class="note" id="cdNote">25 December ✨</p>
+    <div class="count" id="count">
+      <div><b id="d">0</b><span>days</span></div>
+      <div><b id="h">0</b><span>hours</span></div>
+      <div><b id="m">0</b><span>mins</span></div>
+      <div><b id="s">0</b><span>secs</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Our little memories 📸💕</h2>
+    <p class="note">tap any photo to see it big 🥰</p>
+    <div class="gallery" id="gallery">
+      <figure><img src="images/photo2.jpg" loading="lazy" alt=""><figcaption>Main character energy ❤️</figcaption></figure>
+      <figure><img src="images/photo7.jpg" loading="lazy" alt=""><figcaption>Us being us 😭💗</figcaption></figure>
+      <figure><img src="images/photo4.jpg" loading="lazy" alt=""><figcaption>Dressed like a queen 👑</figcaption></figure>
+      <figure><img src="images/photo8.jpg" loading="lazy" alt=""><figcaption>Selfie time 🤳✨</figcaption></figure>
+      <figure><img src="images/photo10.jpg" loading="lazy" alt=""><figcaption>Our random moments 🧱😂</figcaption></figure>
+      <figure><img src="images/photo5.jpg" loading="lazy" alt=""><figcaption>Night lights, pretty smile 🌙</figcaption></figure>
+      <figure><img src="images/photo11.jpg" loading="lazy" alt=""><figcaption>Old school days 🎒🥹</figcaption></figure>
+      <figure><img src="images/photo3.jpg" loading="lazy" alt=""><figcaption>Elegance level: 100 🌿</figcaption></figure>
+      <figure><img src="images/photo6.jpg" loading="lazy" alt=""><figcaption>Birthday vibes 🎈</figcaption></figure>
+      <figure><img src="images/photo9.jpg" loading="lazy" alt=""><figcaption>Red lips, red dupatta ❤️</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Fourteen things in my heart 💌</h2>
+    <p class="note">tap each card to open it 🤍</p>
+    <div id="cards" class="cards"></div>
+  </section>
+
+  <section class="block cake-block">
+    <h2>Make a wish, Munaza 🕯️</h2>
+    <p class="note">tap the candle to blow it out 🥺</p>
+    <button id="cake" class="cake" aria-label="Blow candle">
+      <span class="flame" id="flame">🔥</span>
+      <span class="cake-body">🎂</span>
+    </button>
+    <p id="wishText" class="wish"></p>
+  </section>
+
+  <footer class="final">
+    <p class="script">Happy Birthday, my girl 🎂</p>
+    <p class="big">I love you more than words can explain. 💗</p>
+    <button id="confettiBtn" class="btn">One more surprise 🎉</button>
+    <p class="sign">— with all my love, your best friend 🫶🏻♾️</p>
+  </footer>
+</main>
+
+<div id="lightbox" class="lightbox hidden"><img alt=""><button aria-label="Close">✕</button></div>
+<canvas id="confetti"></canvas>
+
+<script src="script.js"></script>
+</body>
+      </html>

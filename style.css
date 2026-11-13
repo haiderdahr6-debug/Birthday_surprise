@@ -1,0 +1,108 @@
+:root{
+  --blush:#fff1f4;
+  --petal:#ffd6e0;
+  --rose:#e8577d;
+  --berry:#8e2a4d;
+  --gold:#c9974a;
+  --ink:#4a2433;
+  --card:#ffffffcc;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Quicksand',sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 10% 0%,#ffe3ea 0,transparent 45%),
+    radial-gradient(circle at 90% 30%,#fde8d3 0,transparent 40%),
+    radial-gradient(circle at 20% 80%,#f9d7e6 0,transparent 45%),
+    var(--blush);
+  min-height:100vh;
+  overflow-x:hidden;
+  line-height:1.7;
+}
+.hidden{display:none !important}
+h1,h2{font-family:'Cormorant Garamond',serif;font-weight:700}
+.script{font-family:'Caveat',cursive;color:var(--rose);font-size:2.2rem}
+.note{text-align:center;color:#a0566f;margin-bottom:1.4rem;font-size:.95rem}
+
+#fall{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+#fall span{position:absolute;top:-40px;animation:fall linear forwards;opacity:.8}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+
+.music{position:fixed;right:14px;bottom:14px;z-index:20;width:46px;height:46px;border-radius:50%;
+  border:none;background:#fff;box-shadow:0 4px 14px #e8577d55;font-size:1.3rem;cursor:pointer}
+
+#gate{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;position:relative;z-index:2}
+.gate-box h2{font-size:2rem;margin-top:1rem;color:var(--berry)}
+.small{color:#a0566f}
+.envelope{position:relative;width:200px;height:140px;margin:22px auto 0;border:none;cursor:pointer;
+  background:linear-gradient(160deg,#ffb3c6,#e8577d);border-radius:10px;box-shadow:0 14px 30px #e8577d55;
+  animation:float 2.6s ease-in-out infinite}
+.envelope .flap{position:absolute;left:0;top:0;width:100%;height:70px;
+  background:#f58aa6;clip-path:polygon(0 0,100% 0,50% 100%);border-radius:10px 10px 0 0}
+.envelope .heart{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:2.8rem;margin-top:28px}
+@keyframes float{50%{transform:translateY(-10px)}}
+
+.hero{text-align:center;padding:60px 20px 30px;position:relative;z-index:2}
+.hero h1{font-size:clamp(3.6rem,17vw,7rem);line-height:1;color:var(--berry);
+  background:linear-gradient(90deg,var(--berry),var(--rose),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{margin-top:8px;font-size:1.1rem}
+.hero-photo{margin:26px auto 0;max-width:520px;padding:10px;background:#fff;border-radius:22px;
+  box-shadow:0 16px 40px #8e2a4d33;transform:rotate(-2deg)}
+.hero-photo img{width:100%;display:block;border-radius:14px}
+.scroll{margin-top:22px;color:#a0566f;animation:float 2.4s ease-in-out infinite}
+
+.block{position:relative;z-index:2;max-width:980px;margin:0 auto;padding:46px 18px}
+.block h2{font-size:clamp(2rem,7vw,2.9rem);text-align:center;color:var(--berry);margin-bottom:6px}
+
+.count{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.count div{width:78px;padding:14px 4px;background:var(--card);border:1.5px solid var(--petal);border-radius:18px;text-align:center;
+  box-shadow:0 8px 20px #e8577d22}
+.count b{display:block;font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--rose)}
+.count span{font-size:.8rem;color:#a0566f}
+.count.today{display:block}
+.count.today p{font-family:'Caveat',cursive;font-size:2.4rem;color:var(--rose);text-align:center}
+
+.gallery{columns:2;column-gap:12px}
+@media(min-width:700px){.gallery{columns:3}}
+.gallery figure{break-inside:avoid;margin-bottom:12px;background:#fff;padding:8px 8px 10px;border-radius:14px;
+  box-shadow:0 8px 20px #8e2a4d22;cursor:pointer;transition:transform .25s}
+.gallery figure:nth-child(odd){transform:rotate(-1.2deg)}
+.gallery figure:nth-child(even){transform:rotate(1.2deg)}
+.gallery figure:hover{transform:rotate(0) scale(1.02)}
+.gallery img{width:100%;display:block;border-radius:8px}
+.gallery figcaption{font-family:'Caveat',cursive;font-size:1.15rem;text-align:center;margin-top:6px;color:var(--berry)}
+
+.cards{display:flex;flex-direction:column;gap:14px;max-width:680px;margin:0 auto}
+.card{background:var(--card);border:1.5px solid var(--petal);border-radius:20px;overflow:hidden;
+  box-shadow:0 8px 22px #e8577d1f;backdrop-filter:blur(4px)}
+.card button{all:unset;box-sizing:border-box;width:100%;display:flex;align-items:center;gap:12px;padding:16px 18px;cursor:pointer}
+.card .num{flex:none;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#ff9bb5,var(--rose));
+  color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600}
+.card .title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--berry);flex:1}
+.card .arrow{transition:transform .3s;color:var(--rose)}
+.card.open .arrow{transform:rotate(180deg)}
+.card .body{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.card .body p{padding:0 20px 20px;font-size:1.02rem}
+.card.open{border-color:var(--rose)}
+
+.cake-block{text-align:center}
+.cake{position:relative;border:none;background:none;cursor:pointer;font-size:5.5rem;padding-top:40px}
+.flame{position:absolute;top:-6px;left:50%;transform:translateX(-50%);font-size:2.4rem;animation:flick .5s infinite alternate}
+.flame.off{opacity:0;animation:none}
+@keyframes flick{to{transform:translateX(-50%) scale(1.15) rotate(4deg)}}
+.wish{font-family:'Caveat',cursive;font-size:1.8rem;color:var(--rose);margin-top:12px;min-height:3rem;padding:0 16px}
+
+.final{position:relative;z-index:2;text-align:center;padding:60px 20px 90px}
+.final .big{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--berry);margin:6px 0 22px}
+.btn{border:none;padding:14px 28px;border-radius:40px;font-family:inherit;font-weight:600;font-size:1rem;color:#fff;cursor:pointer;
+  background:linear-gradient(135deg,#ff8fb0,var(--rose));box-shadow:0 10px 24px #e8577d55}
+.sign{margin-top:26px;font-family:'Caveat',cursive;font-size:1.5rem;color:#a0566f}
+
+.lightbox{position:fixed;inset:0;background:#2a0f19e6;z-index:50;display:flex;align-items:center;justify-content:center;padding:18px}
+.lightbox img{max-width:100%;max-height:88vh;border-radius:12px}
+.lightbox button{position:absolute;top:14px;right:16px;border:none;background:#fff;width:40px;height:40px;border-radius:50%;font-size:1.1rem;cursor:pointer}
+#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:60}
+
+@media(prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
